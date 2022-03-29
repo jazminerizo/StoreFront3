@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FireScaleDragons.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Metadata\FireScaleDragonsMetadata.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>FireScaleDragons.tt</DependentUpon>
     </Compile>
