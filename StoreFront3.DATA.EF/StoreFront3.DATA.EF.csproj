@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>FireScaleDragons.tt</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>FireScaleDragons.tt</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockStatus.cs">
+      <DependentUpon>FireScaleDragons.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.cs">
       <DependentUpon>FireScaleDragons.tt</DependentUpon>
     </Compile>
   </ItemGroup>

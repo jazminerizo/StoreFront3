@@ -12,8 +12,9 @@ namespace StoreFront3.DATA.EF//.Metadata
     public class ProductMetadata
     {
 
-        //public int ProductID { get; set; }
+        public int ProductID { get; set; }
 
+        //[Key]
         [Required]
         [StringLength(50)]
         [Display(Name = "Product")]
@@ -28,7 +29,7 @@ namespace StoreFront3.DATA.EF//.Metadata
         public decimal UnitPrice { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public int StockStatusID { get; set; }
+        public bool StockStatusID { get; set; }
 
         [Required(ErrorMessage = "*")]
         [UIHint("MultilineText")]
@@ -51,14 +52,14 @@ namespace StoreFront3.DATA.EF//.Metadata
 
     public class StockStatusMetadata
     {
-        //[Key]
-        //[Required(ErrorMessage = "*")]
-        //public int StockStatusID;
+        
+        [Required(ErrorMessage = "*")]
+        public int StockStatusID { get; set; }
 
         [Required(ErrorMessage = "*")]
         [Display(Name = "Stock Status")]
         [StringLength(50, ErrorMessage = "Must be atleast 50 characters or less.")]
-        public string StockStatus1;
+        public string StockStatus1 { get; set; }
     }
 
     [MetadataType(typeof(StockStatusMetadata))]
@@ -70,14 +71,14 @@ namespace StoreFront3.DATA.EF//.Metadata
 
     public class CategoryMetadata
     {
-        //[Key]
-        //[Required(ErrorMessage = "*")]
-        //public int CategoryID;
+        
+        [Required(ErrorMessage = "*")]
+        public int CategoryID { get; set; }
 
         [Required(ErrorMessage = "*")]
         [Display(Name = "Category")]
         [StringLength(50, ErrorMessage = "Must be 50 characters or less")]
-        public string CategoryName;
+        public string CategoryName { get; set; }
     }
 
     [MetadataType(typeof(CategoryMetadata))]
@@ -91,12 +92,12 @@ namespace StoreFront3.DATA.EF//.Metadata
     {
         [Key]
         [Required(ErrorMessage = "*")]
-        public int DepartmentID;
+        public int DepartmentID { get; set; }
 
         [StringLength(50, ErrorMessage = "Must be 50 characters or less")]
         [Display(Name = "Department")]
         [UIHint("MultilineText")]
-        public string DepartmentName;
+        public string DepartmentName { get; set; }
     }
 
     [MetadataType(typeof(DepartmentMetadata))]
@@ -109,18 +110,18 @@ namespace StoreFront3.DATA.EF//.Metadata
 
     public class EmployeeMetadata
     {
-        [Key]
+        
         [Required(ErrorMessage = "*")]
         [Display(Name = "Employee ID")]
-        public int EmployeeID;
+        public int EmployeeID { get; set; }
 
         [Required(ErrorMessage = "*")]
         [StringLength(50, ErrorMessage = "Must be atleast 50 characters")]
         [Display(Name = "Name")]
-        public string EmployeeName;
+        public string EmployeeName { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public int DepartmentID;
+        public int DepartmentID { get; set; }
 
 
 

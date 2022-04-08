@@ -79,6 +79,14 @@ namespace StoreFront3.UI.MVC.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        public string FavoriteColor { get; set; }
     }
 
     public class ResetPasswordViewModel
@@ -100,6 +108,8 @@ namespace StoreFront3.UI.MVC.Models
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
+
+        
     }
 
     public class ForgotPasswordViewModel
