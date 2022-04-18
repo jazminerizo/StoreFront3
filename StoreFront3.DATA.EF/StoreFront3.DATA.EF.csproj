@@ -56,6 +56,9 @@
     <Compile Include="Category.cs">
       <DependentUpon>FireScaleDragons.tt</DependentUpon>
     </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>FireScaleDragons.tt</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>FireScaleDragons.tt</DependentUpon>
     </Compile>
