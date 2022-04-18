@@ -54,14 +54,14 @@
             @Html.DisplayFor(modelItem => item.StockStatus.StockStatus1)
         </td>
         <td>
-            <a href="@Html.ActionLink("Edit", "Edit", new { id = item.ProductID })">
-                <i class="fa fa-pencil-square-o action-icons" aria-hidden="true"></i>
+            <a href="@Url.Action("Edit", new { id = item.ProductID })">
+                <i class="fa fa-outdent" aria-hidden="true" title="Edit" style="color: green"></i>
             </a>
-            <a href="@Html.ActionLink("Details", "Details", new { id=item.ProductID })">
-                <i class="fa fa-info-circle action-icons" aria-hidden="true"></i>
+            <a href="@Url.Action("Details", new { id=item.ProductID })">
+                <i class="fa fa-info-circle" aria-hidden="true" title="Details"></i>
             </a>
-            <a href="@Html.ActionLink("Delete", "Delete", new { id=item.ProductID })">
-                <i class="fa fa-trash-o action-icons" aria-hidden="true"></i>
+            <a href="@Url.Action("Delete", new { id=item.ProductID })">
+                <i class="fa fa-trash" aria-hidden="true" title="Delete" style="color: red"></i>
             </a>
         </td>
     </tr>

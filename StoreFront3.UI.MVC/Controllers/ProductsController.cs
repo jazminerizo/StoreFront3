@@ -103,7 +103,7 @@ namespace StoreFront3.UI.MVC.Controllers
         public ActionResult Create()
         {
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
-            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus1");
+            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus");//
             return View();
         }
 
@@ -158,13 +158,17 @@ namespace StoreFront3.UI.MVC.Controllers
 
                 #endregion
 
+                product.StockStatusID = 1;
+                
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            //ViewBag.ProductID = new SelectList(db.Products, "ProductID", "CategoryID", product.CategoryID);
+
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
-            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus1", product.StockStatusID);
+            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus", product.StockStatusID);//
             return View(product);
         }
 
@@ -181,7 +185,7 @@ namespace StoreFront3.UI.MVC.Controllers
                 return HttpNotFound();
             }
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
-            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus1", product.StockStatusID);
+            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus", product.StockStatusID);//
             return View(product);
         }
 
@@ -250,12 +254,13 @@ namespace StoreFront3.UI.MVC.Controllers
 
                 #endregion
 
+                product.StockStatusID = 1;
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
-            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus1", product.StockStatusID);
+            ViewBag.StockStatusID = new SelectList(db.StockStatuses, "StockStatusID", "StockStatus", product.StockStatusID);//
             return View(product);
         }
 
@@ -280,6 +285,10 @@ namespace StoreFront3.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Products.Find(id);
+
+            string path = Server.MapPath("~/Content/images/");
+            ImageUtility.Delete(path, product.ProductImage);
+
             db.Products.Remove(product);
             db.SaveChanges();
             return RedirectToAction("Index");

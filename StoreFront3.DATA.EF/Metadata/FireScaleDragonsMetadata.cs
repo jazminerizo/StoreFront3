@@ -9,6 +9,10 @@ namespace StoreFront3.DATA.EF//.Metadata
 {
     #region ProductsMetaData
 
+    [MetadataType(typeof(ProductMetadata))]
+    public partial class Product
+    { }
+
     public class ProductMetadata
     {
 
@@ -20,6 +24,7 @@ namespace StoreFront3.DATA.EF//.Metadata
         [Display(Name = "Product")]
         public string ProductName { get; set; }
 
+        [Display(Name = "Category")]
         [Required(ErrorMessage = "*")]
         public int CategoryID { get; set; }
 
@@ -29,7 +34,7 @@ namespace StoreFront3.DATA.EF//.Metadata
         public decimal UnitPrice { get; set; }
 
         [Required(ErrorMessage = "*")]
-        public bool StockStatusID { get; set; }
+        public int StockStatusID { get; set; }
 
         [Required(ErrorMessage = "*")]
         [UIHint("MultilineText")]
@@ -42,13 +47,13 @@ namespace StoreFront3.DATA.EF//.Metadata
         public string ProductImage { get; set; }
     }
 
-    [MetadataType(typeof(ProductMetadata))]
-    public partial class Product
-    { }
 
     #endregion
 
     #region StockStatusMetadata
+
+    [MetadataType(typeof(StockStatusMetadata))]
+    public partial class StockStatus { }
 
     public class StockStatusMetadata
     {
@@ -62,16 +67,17 @@ namespace StoreFront3.DATA.EF//.Metadata
         public string StockStatus1 { get; set; }
     }
 
-    [MetadataType(typeof(StockStatusMetadata))]
-    public partial class StockStatus { }
 
     #endregion
 
     #region CategoriesMetadata
 
+    [MetadataType(typeof(CategoryMetadata))]
+    public partial class Category { }
+
     public class CategoryMetadata
     {
-        
+        [Display(Name = "Category")]
         [Required(ErrorMessage = "*")]
         public int CategoryID { get; set; }
 
@@ -81,12 +87,13 @@ namespace StoreFront3.DATA.EF//.Metadata
         public string CategoryName { get; set; }
     }
 
-    [MetadataType(typeof(CategoryMetadata))]
-    public partial class Category { }
 
     #endregion
 
     #region DepartmentsMetadata
+
+    [MetadataType(typeof(DepartmentMetadata))]
+    public partial class Department { }
 
     public class DepartmentMetadata
     {
@@ -100,13 +107,14 @@ namespace StoreFront3.DATA.EF//.Metadata
         public string DepartmentName { get; set; }
     }
 
-    [MetadataType(typeof(DepartmentMetadata))]
-    public partial class Department { }
 
 
     #endregion
 
     #region EmployeesMetadata
+
+    [MetadataType(typeof(EmployeeMetadata))]
+    public partial class Employee { }
 
     public class EmployeeMetadata
     {
@@ -121,14 +129,15 @@ namespace StoreFront3.DATA.EF//.Metadata
         public string EmployeeName { get; set; }
 
         [Required(ErrorMessage = "*")]
+        public int DirectReportID { get; set; }
+
+        [Required(ErrorMessage = "*")]
         public int DepartmentID { get; set; }
 
 
 
     }
 
-    [MetadataType(typeof(EmployeeMetadata))]
-    public partial class Employee { }
 
     #endregion
 

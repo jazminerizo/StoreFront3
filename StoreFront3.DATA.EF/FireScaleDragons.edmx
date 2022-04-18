@@ -61,7 +61,7 @@
           <Key>
             <PropertyRef Name="StockStatusID" />
           </Key>
-          <Property Name="StockStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StockStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StockStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="UserDetails">

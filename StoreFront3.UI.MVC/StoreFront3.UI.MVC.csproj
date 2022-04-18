@@ -212,6 +212,7 @@
     <Content Include="Content\images\images %287%29.jpg" />
     <Content Include="Content\images\images %288%29.jpg" />
     <Content Include="Content\images\maxresdefault.jpg" />
+    <Content Include="Content\images\NoImage.png" />
     <Content Include="Content\images\red-bearded-dragon.jpg" />
     <Content Include="Content\images\repticalcium.jpg" />
     <Content Include="Content\images\uvblight.jpg" />
